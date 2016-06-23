@@ -1,5 +1,5 @@
 class People
-	attr_reader :age, :salary, :phase, :target_raise
+	attr_reader :age, :phase
   attr_accessor :name
 
   def initialize(options={})

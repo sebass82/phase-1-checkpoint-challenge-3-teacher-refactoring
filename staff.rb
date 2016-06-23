@@ -1,8 +1,7 @@
 require_relative 'people'
 
 class Staff < People
-	attr_reader :age, :salary, :phase, :target_raise
-  attr_accessor :name
+	attr_reader :salary, :target_raise
 
   def initialize(options={})
     # @age = options.fetch(:age, 0)
@@ -20,14 +19,6 @@ class Staff < People
     "Cool, I've always wanted to teach phase #{num}!"
   end
 
-  def teach_stuff
-    response = ""
-    response += "Listen, class, this is how everything works. "
-    response += "*drops crazy knowledge bomb* "
-    response += "... You're welcome."
-    response
-  end
-
   def salary=(new_salary)
     puts "This better be good!"
     @salary = new_salary
@@ -37,14 +28,17 @@ class Staff < People
     @salary += raise
   end
 
+  def teach_stuff
+    response = self.class::RESPONSE
+  end
+ 
   def set_performance_rating(rating)
     response = ""
     if rating > self.class::RATING
       receive_raise(@target_raise)
       response = "Yay, I'm a great employee!"
     else
-      response += "Oh, well -- thanks to this actionable, specific, and kind "
-      response += self.class::RESPONSE
+      response = "Oh, well -- thanks to this actionable, specific, and kind feedback, I'll do better next time."
     end
     response
   end

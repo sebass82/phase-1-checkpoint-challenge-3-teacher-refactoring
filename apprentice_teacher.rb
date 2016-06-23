@@ -3,7 +3,6 @@ require_relative 'staff'
 class ApprenticeTeacher < Staff
 
   RATING = 80  
-  RESPONSE = " "
 
   # attr_reader :age, :salary, :phase, :target_raise
   # attr_accessor :name
@@ -24,14 +23,7 @@ class ApprenticeTeacher < Staff
   #   @phase = num
   #   "Cool, I've always wanted to teach phase #{num}!"
   # end
-
-  # def teach_stuff
-  #   response = ""
-  #   response += "Listen, class, this is how everything works. "
-  #   response += "*drops crazy knowledge bomb* "
-  #   response += "... You're welcome."
-  #   response
-  # end
+  RESPONSE = "Listen, class, this is how everything works. *drops crazy knowledge bomb* ... You're welcome."
 
   # def salary=(new_salary)
   #   puts "This better be good!"
